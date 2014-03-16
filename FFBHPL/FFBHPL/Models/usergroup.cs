@@ -12,20 +12,16 @@ namespace FFBHPL.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class league
+    public partial class usergroup
     {
-        public league()
+        public usergroup()
         {
-            this.leagueparticipants = new HashSet<leagueparticipants>();
+            this.user = new HashSet<user>();
         }
     
-        public int idLeague { get; set; }
-        public string leagueName { get; set; }
-        public int owner { get; set; }
-        public int fromGameweek { get; set; }
+        public int idUserGroup { get; set; }
+        public string groupName { get; set; }
     
-        public virtual gameweek gameweek { get; set; }
-        public virtual user user { get; set; }
-        public virtual ICollection<leagueparticipants> leagueparticipants { get; set; }
+        public virtual ICollection<user> user { get; set; }
     }
 }

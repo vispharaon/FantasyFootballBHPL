@@ -162,9 +162,6 @@
     <Compile Include="Models\matchevents.cs">
       <DependentUpon>FFBHPLModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\player.cs">
-      <DependentUpon>FFBHPLModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\playernews.cs">
       <DependentUpon>FFBHPLModel.tt</DependentUpon>
     </Compile>
@@ -184,6 +181,12 @@
       <DependentUpon>FFBHPLModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\transfer.cs">
+      <DependentUpon>FFBHPLModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\user.cs">
+      <DependentUpon>FFBHPLModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usergroup.cs">
       <DependentUpon>FFBHPLModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -210,6 +213,9 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <EntityDeploy Include="Models\FFBHPLModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>FFBHPLModel.Designer.cs</LastGenOutput>
@@ -229,9 +235,6 @@
       <DependentUpon>FFBHPLModel.edmx</DependentUpon>
       <LastGenOutput>FFBHPLModel.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

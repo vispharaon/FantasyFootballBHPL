@@ -20,6 +20,6 @@ namespace FFBHPL.Models
         public int participatesIntoLeague { get; set; }
     
         public virtual league league { get; set; }
-        public virtual player player { get; set; }
+        public virtual user user { get; set; }
     }
 }

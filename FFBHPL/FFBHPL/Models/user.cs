@@ -12,15 +12,15 @@ namespace FFBHPL.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class player
+    public partial class user
     {
-        public player()
+        public user()
         {
             this.league = new HashSet<league>();
             this.leagueparticipants = new HashSet<leagueparticipants>();
         }
     
-        public int idPlayer { get; set; }
+        public int userId { get; set; }
         public string firstName { get; set; }
         public string lastName { get; set; }
         public System.DateTime dateOfBirth { get; set; }
@@ -34,9 +34,11 @@ namespace FFBHPL.Models
         public string timeZone { get; set; }
         public string zipCode { get; set; }
         public int idPlayersTeam1 { get; set; }
+        public int UserGroup_idUserGroup { get; set; }
     
         public virtual ICollection<league> league { get; set; }
         public virtual ICollection<leagueparticipants> leagueparticipants { get; set; }
         public virtual playersteam playersteam { get; set; }
+        public virtual usergroup usergroup { get; set; }
     }
 }

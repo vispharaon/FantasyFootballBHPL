@@ -33,7 +33,6 @@ namespace FFBHPL.Models
         public DbSet<leagueparticipants> leagueparticipants { get; set; }
         public DbSet<match> match { get; set; }
         public DbSet<matchevents> matchevents { get; set; }
-        public DbSet<player> player { get; set; }
         public DbSet<playernews> playernews { get; set; }
         public DbSet<playersteam> playersteam { get; set; }
         public DbSet<position> position { get; set; }
@@ -41,5 +40,7 @@ namespace FFBHPL.Models
         public DbSet<selectedsquad> selectedsquad { get; set; }
         public DbSet<selectedsquadchecked> selectedsquadchecked { get; set; }
         public DbSet<transfer> transfer { get; set; }
+        public DbSet<user> user { get; set; }
+        public DbSet<usergroup> usergroup { get; set; }
     }
 }

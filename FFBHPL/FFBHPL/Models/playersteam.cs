@@ -16,7 +16,7 @@ namespace FFBHPL.Models
     {
         public playersteam()
         {
-            this.player = new HashSet<player>();
+            this.user = new HashSet<user>();
             this.selectedsquad = new HashSet<selectedsquad>();
             this.transfer = new HashSet<transfer>();
         }
@@ -54,7 +54,7 @@ namespace FFBHPL.Models
         public virtual footballplayer footballplayer12 { get; set; }
         public virtual footballplayer footballplayer13 { get; set; }
         public virtual footballplayer footballplayer14 { get; set; }
-        public virtual ICollection<player> player { get; set; }
+        public virtual ICollection<user> user { get; set; }
         public virtual ICollection<selectedsquad> selectedsquad { get; set; }
         public virtual ICollection<transfer> transfer { get; set; }
     }

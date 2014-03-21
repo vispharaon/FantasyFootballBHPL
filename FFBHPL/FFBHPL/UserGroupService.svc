@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="FFBHPL.UserGroupService" CodeBehind="UserGroupService.svc.cs" %>

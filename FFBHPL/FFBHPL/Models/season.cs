@@ -24,5 +24,7 @@ namespace FFBHPL.Models
         public string description { get; set; }
     
         public virtual ICollection<gameweek> gameweek { get; set; }
+
+        public static Newtonsoft.Json.JsonObjectAttribute ToString { get; set; }
     }
 }

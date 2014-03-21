@@ -21,21 +21,21 @@ namespace FFBHPL.Models
     
         public int idSelectedSquad { get; set; }
         public int idPlayersTeam2 { get; set; }
-        public bool gk1In { get; set; }
-        public bool gk2In { get; set; }
-        public bool def1In { get; set; }
-        public bool def2In { get; set; }
-        public bool def3In { get; set; }
-        public bool def4In { get; set; }
-        public bool def5In { get; set; }
-        public bool mid1In { get; set; }
-        public bool mid2In { get; set; }
-        public bool mid3In { get; set; }
-        public bool mid4In { get; set; }
-        public bool mid5In { get; set; }
-        public bool fw1In { get; set; }
-        public bool fw2In { get; set; }
-        public bool fw3In { get; set; }
+        public int gk1In { get; set; }
+        public int gk2In { get; set; }
+        public int def1In { get; set; }
+        public int def2In { get; set; }
+        public int def3In { get; set; }
+        public int def4In { get; set; }
+        public int def5In { get; set; }
+        public int mid1In { get; set; }
+        public int mid2In { get; set; }
+        public int mid3In { get; set; }
+        public int mid4In { get; set; }
+        public int mid5In { get; set; }
+        public int fw1In { get; set; }
+        public int fw2In { get; set; }
+        public int fw3In { get; set; }
     
         public virtual playersteam playersteam { get; set; }
         public virtual ICollection<selectedsquadchecked> selectedsquadchecked { get; set; }

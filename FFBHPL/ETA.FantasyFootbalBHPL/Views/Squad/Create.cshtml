@@ -1,0 +1,75 @@
+﻿@model ETA.FantasyFootbalBHPL.Models.squad
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>squad</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.idPlayersTeam)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.idPlayersTeam)
+            @Html.ValidationMessageFor(model => model.idPlayersTeam)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.playersTeamName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.playersTeamName)
+            @Html.ValidationMessageFor(model => model.playersTeamName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.GK_owned)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.GK_owned)
+            @Html.ValidationMessageFor(model => model.GK_owned)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MF_owned)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MF_owned)
+            @Html.ValidationMessageFor(model => model.MF_owned)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DEF_owned)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DEF_owned)
+            @Html.ValidationMessageFor(model => model.DEF_owned)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FW_owned)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FW_owned)
+            @Html.ValidationMessageFor(model => model.FW_owned)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

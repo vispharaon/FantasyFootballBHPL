@@ -1,0 +1,36 @@
+﻿@model ETA.FantasyFootbalBHPL.Models.position
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>position</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.idPosition)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.idPosition)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.positionName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.positionName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.shortName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.shortName)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

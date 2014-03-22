@@ -1,0 +1,57 @@
+﻿@model IEnumerable<ETA.FantasyFootbalBHPL.Models.matchevents>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.idMatchEvents)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.match.idMatch)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.footballplayer.firstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.minute)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.events.eventName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.idMatchEvents)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.match.idMatch)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.footballplayer.firstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.minute)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.events.eventName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

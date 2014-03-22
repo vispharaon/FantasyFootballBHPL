@@ -66,7 +66,7 @@ namespace FFBHPL
         {
             bool value = false;
             var context = new FFBHPLEntities();
-            var s = new user { owner = userId };
+            var s = new league { owner = userId };
             context.league.Attach(s);
             context.league.Remove(s);
             var check = new league { idLeague = userId };

@@ -1,0 +1,43 @@
+﻿@model ETA.FantasyFootbalBHPL.Models.season
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>season</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.idSeason)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.idSeason)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.seasonName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.seasonName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.description)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.description)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.squadstructure.idSquadStructure)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.squadstructure.idSquadStructure)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

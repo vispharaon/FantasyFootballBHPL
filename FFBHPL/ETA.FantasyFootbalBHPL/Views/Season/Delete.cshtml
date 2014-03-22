@@ -1,0 +1,46 @@
+﻿@model ETA.FantasyFootbalBHPL.Models.season
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>season</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.idSeason)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.idSeason)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.seasonName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.seasonName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.description)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.description)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.squadstructure.idSquadStructure)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.squadstructure.idSquadStructure)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

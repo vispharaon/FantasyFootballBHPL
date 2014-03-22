@@ -1,0 +1,29 @@
+﻿@model ETA.FantasyFootbalBHPL.Models.usergroup
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>usergroup</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.idUserGroup)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.idUserGroup)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.groupName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.groupName)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

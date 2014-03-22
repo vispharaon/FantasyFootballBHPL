@@ -1,0 +1,50 @@
+﻿@model ETA.FantasyFootbalBHPL.Models.matchevents
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>matchevents</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.idMatchEvents)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.idMatchEvents)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.match.idMatch)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.match.idMatch)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.footballplayer.firstName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.footballplayer.firstName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.minute)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.minute)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.events.eventName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.events.eventName)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

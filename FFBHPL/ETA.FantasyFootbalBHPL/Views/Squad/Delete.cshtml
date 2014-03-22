@@ -1,0 +1,60 @@
+﻿@model ETA.FantasyFootbalBHPL.Models.squad
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>squad</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.idPlayersTeam)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.idPlayersTeam)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.playersTeamName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.playersTeamName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.GK_owned)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.GK_owned)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MF_owned)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MF_owned)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DEF_owned)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DEF_owned)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FW_owned)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FW_owned)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

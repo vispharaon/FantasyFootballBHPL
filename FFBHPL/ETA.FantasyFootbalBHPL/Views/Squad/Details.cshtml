@@ -1,0 +1,57 @@
+﻿@model ETA.FantasyFootbalBHPL.Models.squad
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>squad</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.idPlayersTeam)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.idPlayersTeam)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.playersTeamName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.playersTeamName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.GK_owned)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.GK_owned)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MF_owned)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MF_owned)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DEF_owned)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DEF_owned)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FW_owned)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FW_owned)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

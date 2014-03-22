@@ -1,0 +1,36 @@
+﻿@model ETA.FantasyFootbalBHPL.Models.selectedsquadchecked
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>selectedsquadchecked</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.idSelectedSquadChecked)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.idSelectedSquadChecked)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.gameweek.gameweekName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.gameweek.gameweekName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.squad.playersTeamName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.squad.playersTeamName)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

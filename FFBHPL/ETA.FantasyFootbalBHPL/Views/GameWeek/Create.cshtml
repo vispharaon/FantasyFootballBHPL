@@ -1,0 +1,51 @@
+﻿@model ETA.FantasyFootbalBHPL.Models.gameweek
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>gameweek</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.idGameWeek)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.idGameWeek)
+            @Html.ValidationMessageFor(model => model.idGameWeek)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.gameweekName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.gameweekName)
+            @Html.ValidationMessageFor(model => model.gameweekName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.idSeason1, "season")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("idSeason1", String.Empty)
+            @Html.ValidationMessageFor(model => model.idSeason1)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

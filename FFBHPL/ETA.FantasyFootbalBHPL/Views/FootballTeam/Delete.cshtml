@@ -1,0 +1,32 @@
+﻿@model ETA.FantasyFootbalBHPL.Models.footballteam
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>footballteam</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.idFootballTeam)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.idFootballTeam)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.teamName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.teamName)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

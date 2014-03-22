@@ -1,0 +1,67 @@
+﻿@model ETA.FantasyFootbalBHPL.Models.matchevents
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>matchevents</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.idMatchEvents)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.idMatchEvents)
+            @Html.ValidationMessageFor(model => model.idMatchEvents)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.idMatch1, "match")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("idMatch1", String.Empty)
+            @Html.ValidationMessageFor(model => model.idMatch1)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.idFootballPlayer1, "footballplayer")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("idFootballPlayer1", String.Empty)
+            @Html.ValidationMessageFor(model => model.idFootballPlayer1)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.minute)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.minute)
+            @Html.ValidationMessageFor(model => model.minute)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.idEvents1, "events")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("idEvents1", String.Empty)
+            @Html.ValidationMessageFor(model => model.idEvents1)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

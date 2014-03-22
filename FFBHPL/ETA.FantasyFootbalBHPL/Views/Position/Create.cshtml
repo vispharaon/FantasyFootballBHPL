@@ -1,0 +1,51 @@
+﻿@model ETA.FantasyFootbalBHPL.Models.position
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>position</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.idPosition)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.idPosition)
+            @Html.ValidationMessageFor(model => model.idPosition)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.positionName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.positionName)
+            @Html.ValidationMessageFor(model => model.positionName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.shortName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.shortName)
+            @Html.ValidationMessageFor(model => model.shortName)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

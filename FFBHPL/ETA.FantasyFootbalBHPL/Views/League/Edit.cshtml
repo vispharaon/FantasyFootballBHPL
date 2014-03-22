@@ -1,0 +1,59 @@
+﻿@model ETA.FantasyFootbalBHPL.Models.league
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>league</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.idLeague)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.idLeague)
+            @Html.ValidationMessageFor(model => model.idLeague)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.leagueName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.leagueName)
+            @Html.ValidationMessageFor(model => model.leagueName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.owner, "user")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("owner", String.Empty)
+            @Html.ValidationMessageFor(model => model.owner)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.fromGameweek, "gameweek")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("fromGameweek", String.Empty)
+            @Html.ValidationMessageFor(model => model.fromGameweek)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

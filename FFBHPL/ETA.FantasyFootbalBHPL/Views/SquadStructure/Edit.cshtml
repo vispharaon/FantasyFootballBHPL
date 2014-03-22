@@ -1,0 +1,99 @@
+﻿@model ETA.FantasyFootbalBHPL.Models.squadstructure
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>squadstructure</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.idSquadStructure)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.idSquadStructure)
+            @Html.ValidationMessageFor(model => model.idSquadStructure)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.GK_min)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.GK_min)
+            @Html.ValidationMessageFor(model => model.GK_min)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.GK_max)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.GK_max)
+            @Html.ValidationMessageFor(model => model.GK_max)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MF_min)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MF_min)
+            @Html.ValidationMessageFor(model => model.MF_min)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MF_max)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MF_max)
+            @Html.ValidationMessageFor(model => model.MF_max)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DEF_min)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DEF_min)
+            @Html.ValidationMessageFor(model => model.DEF_min)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DEF_max)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DEF_max)
+            @Html.ValidationMessageFor(model => model.DEF_max)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FW_min)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FW_min)
+            @Html.ValidationMessageFor(model => model.FW_min)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FW_max)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FW_max)
+            @Html.ValidationMessageFor(model => model.FW_max)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

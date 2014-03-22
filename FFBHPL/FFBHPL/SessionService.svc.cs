@@ -11,8 +11,15 @@ namespace FFBHPL
     // NOTE: In order to launch WCF Test Client for testing this service, please select SessionService.svc or SessionService.svc.cs at the Solution Explorer and start debugging.
     public class SessionService : ISessionService
     {
-        public void DoWork()
+
+        public bool Login(String user, String password)
         {
+            return true;
+        }
+
+        public bool Logout(String user)
+        {
+            return true;
         }
     }
 }

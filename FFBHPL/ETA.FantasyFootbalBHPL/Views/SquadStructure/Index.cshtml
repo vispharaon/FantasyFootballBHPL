@@ -1,0 +1,81 @@
+﻿@model IEnumerable<ETA.FantasyFootbalBHPL.Models.squadstructure>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.idSquadStructure)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GK_min)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GK_max)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MF_min)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MF_max)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DEF_min)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DEF_max)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FW_min)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FW_max)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.idSquadStructure)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GK_min)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GK_max)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MF_min)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MF_max)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DEF_min)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DEF_max)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FW_min)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FW_max)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

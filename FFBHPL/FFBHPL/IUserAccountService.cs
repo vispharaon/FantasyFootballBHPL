@@ -21,4 +21,5 @@ namespace FFBHPL
         JsonObjectAttribute updateUserAccount(JsonObjectAttribute input);
         [OperationContract]
         bool deleteUserAccount(int idUser);
+    }
 }

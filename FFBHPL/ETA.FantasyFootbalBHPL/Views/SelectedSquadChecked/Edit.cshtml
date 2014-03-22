@@ -1,0 +1,51 @@
+﻿@model ETA.FantasyFootbalBHPL.Models.selectedsquadchecked
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>selectedsquadchecked</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.idSelectedSquadChecked)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.idSelectedSquadChecked)
+            @Html.ValidationMessageFor(model => model.idSelectedSquadChecked)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.idGameWeek1, "gameweek")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("idGameWeek1", String.Empty)
+            @Html.ValidationMessageFor(model => model.idGameWeek1)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Squad_idPlayersTeam, "squad")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Squad_idPlayersTeam", String.Empty)
+            @Html.ValidationMessageFor(model => model.Squad_idPlayersTeam)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

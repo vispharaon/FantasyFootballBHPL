@@ -21,9 +21,8 @@ namespace ETA.FantasyFootbalBHPL.Controllers
         // GET: /Account/Login
 
         [AllowAnonymous]
-        public ActionResult Login(string returnUrl)
-        {
-            ViewBag.ReturnUrl = returnUrl;
+        public ActionResult Login()
+        {            
             return View();
         }
 
@@ -33,16 +32,34 @@ namespace ETA.FantasyFootbalBHPL.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public ActionResult Login(LoginModel model, string returnUrl)
+        public ActionResult Login(LoginModel model)
         {
-            if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))
+            //if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))
+            if (ModelState.IsValid)
             {
-                return RedirectToLocal(returnUrl);
+                using (fantasyEntities fe = new fantasyEntities())
+                {
+                    //Druga opcija je praviti varijablu i proslijediti koje god parametre treba u sesiju!
+                    if (fe.user.Where(a => a.email.Equals(model.UserName) && a.password.Equals(model.Password)).FirstOrDefault() != null)
+                    {
+                        Session["LoggedUserID"] = model.UserName;
+                        FormsAuthentication.SetAuthCookie(model.UserName, true);
+                        return RedirectToAction("AfterLogin");
+                    }                    
+                }
             }
-
             // If we got this far, something failed, redisplay form
             ModelState.AddModelError("", "The user name or password provided is incorrect.");
             return View(model);
+        }
+
+        //[AllowAnonymous]
+        public ActionResult AfterLogin()
+        {
+            if (Session["LoggedUserID"] != null)
+                return View();
+            else
+                return RedirectToAction("Index", "Home");
         }
 
         //
@@ -79,6 +96,7 @@ namespace ETA.FantasyFootbalBHPL.Controllers
                 // Attempt to register the user
                 try
                 {
+
                     WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
                     WebSecurity.Login(model.UserName, model.Password);
                     return RedirectToAction("Index", "Home");

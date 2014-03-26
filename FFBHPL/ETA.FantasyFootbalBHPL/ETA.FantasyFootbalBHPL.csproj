@@ -468,6 +468,7 @@
     <Content Include="Views\MatchEvents\Create.cshtml" />
     <Content Include="Views\MatchEvents\Edit.cshtml" />
     <Content Include="Views\MatchEvents\Delete.cshtml" />
+    <Content Include="Views\Account\AfterLogin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -58,12 +58,13 @@ namespace ETA.FantasyFootbalBHPL.Models
     public class LoginModel
     {
         [Required]
-        [Display(Name = "User name")]
+        [Display(Name = "Email adresa")]
+        [EmailAddress]
         public string UserName { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Šifra")]
         public string Password { get; set; }
 
         //[Display(Name = "Remember me?")]
@@ -73,18 +74,19 @@ namespace ETA.FantasyFootbalBHPL.Models
     public class RegisterModel
     {
         [Required]
-        [Display(Name = "User name")]
+        [Display(Name = "E-mail adresa")]
+        [EmailAddress]
         public string UserName { get; set; }
 
         [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [StringLength(100, ErrorMessage = "Polje {0} mora imati najmanje {2} karaktera.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Šifra")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [Display(Name = "Potvrdi šifru")]
+        [Compare("Password", ErrorMessage = "Polja šifre i potvrde šifre ne odgovaraju.")]
         public string ConfirmPassword { get; set; }
     }
 

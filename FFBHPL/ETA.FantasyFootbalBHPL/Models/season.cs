@@ -11,6 +11,7 @@ namespace ETA.FantasyFootbalBHPL.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class season
     {
@@ -19,8 +20,13 @@ namespace ETA.FantasyFootbalBHPL.Models
             this.gameweek = new HashSet<gameweek>();
         }
     
+        [Key]
         public int idSeason { get; set; }
+        [Required(ErrorMessage = "Polje je potrebno popuniti!")]
+        [Display(Name = "Naziv sezone")]
         public string seasonName { get; set; }
+        [Required(ErrorMessage = "Polje je potrebno popuniti!")]
+        [Display(Name = "Opis")]
         public string description { get; set; }
         public int SquadStructure_idSquadStructure { get; set; }
     

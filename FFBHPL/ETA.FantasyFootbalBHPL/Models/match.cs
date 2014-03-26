@@ -11,6 +11,7 @@ namespace ETA.FantasyFootbalBHPL.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class match
     {
@@ -19,6 +20,7 @@ namespace ETA.FantasyFootbalBHPL.Models
             this.matchevents = new HashSet<matchevents>();
         }
     
+        [Key]
         public int idMatch { get; set; }
         public int idGameWeek2 { get; set; }
         public int homeTeam { get; set; }

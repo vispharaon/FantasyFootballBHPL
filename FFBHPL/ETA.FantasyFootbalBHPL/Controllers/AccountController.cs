@@ -96,10 +96,53 @@ namespace ETA.FantasyFootbalBHPL.Controllers
                 // Attempt to register the user
                 try
                 {
+                    using (fantasyEntities fe = new fantasyEntities())
+                    {
+                        //Define default squad for new user
+                        squad modelSquad = new squad();
+                        modelSquad.DEF_owned = 0;
+                        modelSquad.FW_owned = 0;
+                        modelSquad.GK_owned = 0;
+                        modelSquad.idPlayersTeam =0;
+                        modelSquad.MF_owned = 0;
+                        modelSquad.playersTeamName = "Default";
 
-                    WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
-                    WebSecurity.Login(model.UserName, model.Password);
-                    return RedirectToAction("Index", "Home");
+                        fe.squad.Add(modelSquad);
+                        fe.SaveChanges();
+                        //Defining user group - for this registration default is 1: Gamer (RegularUser)
+                        //Potrebno kreirati prostor za  unos grupa administatoru - pa ce se izmjeniti i ovaj dio
+
+                        //Define model of user
+                        user modelUser = new user();
+                        modelUser.email = model.UserName;
+                        modelUser.password = model.Password;
+                        modelUser.UserGroup_idUserGroup = 1;
+
+                        modelUser.idPlayersTeam1 = modelSquad.idPlayersTeam;
+                        modelUser.cellPhone = String.Empty;
+                        modelUser.closestCity = String.Empty;
+                        modelUser.country = String.Empty;
+                        modelUser.dateOfBirth = DateTime.Now;
+                        modelUser.firstName = String.Empty;
+                        modelUser.gender = true;
+                        modelUser.lastName = String.Empty;
+                        modelUser.region = String.Empty;
+                        modelUser.timeZone = String.Empty;
+                        modelUser.userId = 0;
+                        modelUser.zipCode = String.Empty;
+
+                        fe.user.Add(modelUser);
+
+                        fe.SaveChanges();
+
+                        if (modelUser.userId > 0)
+                        {
+                            return RedirectToAction("Login");
+                        }
+                    }
+                    //WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
+                    //WebSecurity.Login(model.UserName, model.Password);
+                    return View(model);
                 }
                 catch (MembershipCreateUserException e)
                 {

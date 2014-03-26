@@ -11,6 +11,7 @@ namespace ETA.FantasyFootbalBHPL.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class events
     {
@@ -18,8 +19,10 @@ namespace ETA.FantasyFootbalBHPL.Models
         {
             this.matchevents = new HashSet<matchevents>();
         }
-    
+        [Key]
         public int idEvents { get; set; }
+        [Required(ErrorMessage = "Polje je potrebno popuniti!")]
+        [StringLength(60, ErrorMessage = "Polje moze imati najmanje {2} karaktera i najvise {2} karaktera.", MinimumLength = 2)]
         public string eventName { get; set; }
     
         public virtual ICollection<matchevents> matchevents { get; set; }

@@ -11,6 +11,7 @@ namespace ETA.FantasyFootbalBHPL.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class footballteam
     {
@@ -21,7 +22,10 @@ namespace ETA.FantasyFootbalBHPL.Models
             this.match1 = new HashSet<match>();
         }
     
+        [Key]
         public int idFootballTeam { get; set; }
+        [Required(ErrorMessage = "Polje je potrebno popuniti!")]
+        [Display(Name = "Naziv tima" ) ]
         public string teamName { get; set; }
         public byte[] teamAmblem { get; set; }
         public byte[] teamShirt { get; set; }

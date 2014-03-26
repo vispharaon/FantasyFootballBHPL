@@ -11,6 +11,7 @@ namespace ETA.FantasyFootbalBHPL.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class footballplayer
     {
@@ -21,11 +22,20 @@ namespace ETA.FantasyFootbalBHPL.Models
             this.squadplayer = new HashSet<squadplayer>();
         }
     
+        [Key]
         public int idFootballPlayer { get; set; }
+        [Required(ErrorMessage = "Polje je potrebno popuniti!")]
+        [Display(Name = "Ime igraèa")]
         public string firstName { get; set; }
+        [Required(ErrorMessage = "Polje je potrebno popuniti!")]
+        [Display(Name = "Prezime igraèa")]
         public string lastName { get; set; }
+
         public int idFootballTeam1 { get; set; }
         public int idPosition1 { get; set; }
+        [Required(ErrorMessage = "Polje je potrebno popuniti!")]
+        [Display(Name = "Vrijednost")]
+        [Range(3,13)]
         public decimal value { get; set; }
         public byte[] picture { get; set; }
     

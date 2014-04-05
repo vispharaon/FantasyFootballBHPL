@@ -26,7 +26,7 @@ namespace ETA.FantasyFootbalBHPL.Controllers
         {
             ViewBag.Message = "Your contact page.";
 
-            return View();
+            return RedirectToAction("Create","League");
         }
     }
 }

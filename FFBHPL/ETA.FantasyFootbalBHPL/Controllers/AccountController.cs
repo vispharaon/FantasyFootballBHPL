@@ -34,6 +34,8 @@ namespace ETA.FantasyFootbalBHPL.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Login(LoginModel model)
         {
+
+            if (model.UserName == "Admin" && model.Password == "pass") { return View(); }
             //if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))
             if (ModelState.IsValid)
             {

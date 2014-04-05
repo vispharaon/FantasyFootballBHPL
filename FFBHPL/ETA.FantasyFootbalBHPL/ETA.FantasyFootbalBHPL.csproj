@@ -164,6 +164,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\FootballPlayerController.cs" />
     <Compile Include="Controllers\FootballTeamController.cs" />
@@ -480,12 +481,18 @@
     <Content Include="Views\MatchEvents\Edit.cshtml" />
     <Content Include="Views\MatchEvents\Delete.cshtml" />
     <Content Include="Views\Account\AfterLogin.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\_layout.cshtml" />
+    <Content Include="Views\Admin\Profil.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="bootstrap\css\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

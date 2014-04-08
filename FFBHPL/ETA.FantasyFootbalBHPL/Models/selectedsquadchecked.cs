@@ -17,8 +17,5 @@ namespace ETA.FantasyFootbalBHPL.Models
         public int idSelectedSquadChecked { get; set; }
         public int idGameWeek1 { get; set; }
         public int Squad_idPlayersTeam { get; set; }
-    
-        public virtual gameweek gameweek { get; set; }
-        public virtual squad squad { get; set; }
     }
 }

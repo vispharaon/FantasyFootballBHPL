@@ -11,15 +11,11 @@ namespace ETA.FantasyFootbalBHPL.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
     
     public partial class playernews
     {
-        [Key]
         public int idPlayerNews { get; set; }
         public string newsMessage { get; set; }
         public int idFootballPlayer1 { get; set; }
-    
-        public virtual footballplayer footballplayer { get; set; }
     }
 }

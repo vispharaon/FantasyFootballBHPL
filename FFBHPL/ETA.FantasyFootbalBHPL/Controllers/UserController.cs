@@ -11,15 +11,15 @@ namespace ETA.FantasyFootbalBHPL.Controllers
 {
     public class UserController : Controller
     {
-        private fantasyEntities db = new fantasyEntities();
+        
 
         //
         // GET: /User/
 
         public ActionResult Index()
         {
-            var user = db.user.Include(u => u.squad).Include(u => u.usergroup);
-            return View(user.ToList());
+           
+            return View();
         }
 
         //
@@ -27,12 +27,7 @@ namespace ETA.FantasyFootbalBHPL.Controllers
 
         public ActionResult Details(int id = 0)
         {
-            user user = db.user.Find(id);
-            if (user == null)
-            {
-                return HttpNotFound();
-            }
-            return View(user);
+            return View();
         }
 
         //
@@ -40,9 +35,7 @@ namespace ETA.FantasyFootbalBHPL.Controllers
 
         public ActionResult Create()
         {
-            ViewBag.idPlayersTeam1 = new SelectList(db.squad, "idPlayersTeam", "playersTeamName");
-            ViewBag.UserGroup_idUserGroup = new SelectList(db.usergroup, "idUserGroup", "groupName");
-            return View();
+                 return View();
         }
 
         //
@@ -51,16 +44,7 @@ namespace ETA.FantasyFootbalBHPL.Controllers
         [HttpPost]
         public ActionResult Create(user user)
         {
-            if (ModelState.IsValid)
-            {
-                db.user.Add(user);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            ViewBag.idPlayersTeam1 = new SelectList(db.squad, "idPlayersTeam", "playersTeamName", user.idPlayersTeam1);
-            ViewBag.UserGroup_idUserGroup = new SelectList(db.usergroup, "idUserGroup", "groupName", user.UserGroup_idUserGroup);
-            return View(user);
+           return View();
         }
 
         //
@@ -68,14 +52,7 @@ namespace ETA.FantasyFootbalBHPL.Controllers
 
         public ActionResult Edit(int id = 0)
         {
-            user user = db.user.Find(id);
-            if (user == null)
-            {
-                return HttpNotFound();
-            }
-            ViewBag.idPlayersTeam1 = new SelectList(db.squad, "idPlayersTeam", "playersTeamName", user.idPlayersTeam1);
-            ViewBag.UserGroup_idUserGroup = new SelectList(db.usergroup, "idUserGroup", "groupName", user.UserGroup_idUserGroup);
-            return View(user);
+           return View();
         }
 
         //
@@ -84,15 +61,7 @@ namespace ETA.FantasyFootbalBHPL.Controllers
         [HttpPost]
         public ActionResult Edit(user user)
         {
-            if (ModelState.IsValid)
-            {
-                db.Entry(user).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            ViewBag.idPlayersTeam1 = new SelectList(db.squad, "idPlayersTeam", "playersTeamName", user.idPlayersTeam1);
-            ViewBag.UserGroup_idUserGroup = new SelectList(db.usergroup, "idUserGroup", "groupName", user.UserGroup_idUserGroup);
-            return View(user);
+            return View();
         }
 
         //
@@ -100,12 +69,7 @@ namespace ETA.FantasyFootbalBHPL.Controllers
 
         public ActionResult Delete(int id = 0)
         {
-            user user = db.user.Find(id);
-            if (user == null)
-            {
-                return HttpNotFound();
-            }
-            return View(user);
+            return View();
         }
 
         //
@@ -114,16 +78,12 @@ namespace ETA.FantasyFootbalBHPL.Controllers
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
-            user user = db.user.Find(id);
-            db.user.Remove(user);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+           return View();
         }
 
         protected override void Dispose(bool disposing)
         {
-            db.Dispose();
-            base.Dispose(disposing);
+            
         }
     }
 }

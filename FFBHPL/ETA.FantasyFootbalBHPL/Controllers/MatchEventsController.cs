@@ -11,15 +11,15 @@ namespace ETA.FantasyFootbalBHPL.Controllers
 {
     public class MatchEventsController : Controller
     {
-        private fantasyEntities db = new fantasyEntities();
+        private fantasyEntities1 db = new fantasyEntities1();
 
         //
         // GET: /MatchEvents/
 
         public ActionResult Index()
         {
-            var matchevents = db.matchevents.Include(m => m.events).Include(m => m.footballplayer).Include(m => m.match);
-            return View(matchevents.ToList());
+   
+            return View();
         }
 
         //

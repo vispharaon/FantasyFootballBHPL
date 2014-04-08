@@ -14,14 +14,7 @@ namespace ETA.FantasyFootbalBHPL.Models
     
     public partial class usergroup
     {
-        public usergroup()
-        {
-            this.user = new HashSet<user>();
-        }
-    
         public int idUserGroup { get; set; }
         public string groupName { get; set; }
-    
-        public virtual ICollection<user> user { get; set; }
     }
 }

@@ -11,7 +11,6 @@ namespace ETA.FantasyFootbalBHPL.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
     
     public partial class gameweek
     {
@@ -19,19 +18,14 @@ namespace ETA.FantasyFootbalBHPL.Models
         {
             this.league = new HashSet<league>();
             this.match = new HashSet<match>();
-            this.selectedsquadchecked = new HashSet<selectedsquadchecked>();
         }
-        [Key]
+    
         public int idGameWeek { get; set; }
-        [Required(ErrorMessage = "Polje je potrebno popuniti!")]
-        [Display(Name = "Naziv kola")]
         public string gameweekName { get; set; }
-        [Required(ErrorMessage = "Polje je potrebno popuniti!")]
         public int idSeason1 { get; set; }
     
         public virtual season season { get; set; }
         public virtual ICollection<league> league { get; set; }
         public virtual ICollection<match> match { get; set; }
-        public virtual ICollection<selectedsquadchecked> selectedsquadchecked { get; set; }
     }
 }

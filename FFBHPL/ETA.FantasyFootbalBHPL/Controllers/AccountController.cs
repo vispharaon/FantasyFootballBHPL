@@ -35,7 +35,7 @@ namespace ETA.FantasyFootbalBHPL.Controllers
         public ActionResult Login(LoginModel model)
         {
 
-            if (model.UserName == "Admin" && model.Password == "pass") { return View(); }
+           /* if (model.UserName == "Admin" && model.Password == "pass") { return View(); }
             //if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))
             if (ModelState.IsValid)
             {
@@ -51,17 +51,17 @@ namespace ETA.FantasyFootbalBHPL.Controllers
                 }
             }
             // If we got this far, something failed, redisplay form
-            ModelState.AddModelError("", "The user name or password provided is incorrect.");
+            ModelState.AddModelError("", "The user name or password provided is incorrect.");*/
             return View(model);
         }
 
         //[AllowAnonymous]
         public ActionResult AfterLogin()
         {
-            if (Session["LoggedUserID"] != null)
+            /*if (Session["LoggedUserID"] != null)
                 return View();
-            else
-                return RedirectToAction("Index", "Home");
+            else*/
+            return RedirectToAction("Index", "Home");
         }
 
         //
@@ -93,7 +93,7 @@ namespace ETA.FantasyFootbalBHPL.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Register(RegisterModel model)
         {
-            if (ModelState.IsValid)
+            /*if (ModelState.IsValid)
             {
                 // Attempt to register the user
                 try
@@ -150,7 +150,7 @@ namespace ETA.FantasyFootbalBHPL.Controllers
                 {
                     ModelState.AddModelError("", ErrorCodeToString(e.StatusCode));
                 }
-            }
+            }*/
 
             // If we got this far, something failed, redisplay form
             return View(model);

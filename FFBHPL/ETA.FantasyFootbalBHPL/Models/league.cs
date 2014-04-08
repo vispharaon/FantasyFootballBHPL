@@ -11,7 +11,6 @@ namespace ETA.FantasyFootbalBHPL.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
     
     public partial class league
     {
@@ -20,16 +19,9 @@ namespace ETA.FantasyFootbalBHPL.Models
             this.leagueparticipants = new HashSet<leagueparticipants>();
         }
     
-        [Key]
         public int idLeague { get; set; }
-        [Required(ErrorMessage = "Polje je potrebno popuniti!")]
-        [Display(Name = "Naziv lige")]
         public string leagueName { get; set; }
-        [Required(ErrorMessage = "Polje je potrebno popuniti!")]
-        [Display(Name = "Igrac")]
         public int owner { get; set; }
-        [Required(ErrorMessage = "Polje je potrebno popuniti!")]
-        [Display(Name = "Kolo")]
         public int fromGameweek { get; set; }
     
         public virtual gameweek gameweek { get; set; }

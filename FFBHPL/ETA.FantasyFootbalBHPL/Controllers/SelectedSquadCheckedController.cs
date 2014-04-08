@@ -11,15 +11,14 @@ namespace ETA.FantasyFootbalBHPL.Controllers
 {
     public class SelectedSquadCheckedController : Controller
     {
-        private fantasyEntities db = new fantasyEntities();
+       
 
         //
         // GET: /SelectedSquadChecked/
 
         public ActionResult Index()
         {
-            var selectedsquadchecked = db.selectedsquadchecked.Include(s => s.gameweek).Include(s => s.squad);
-            return View(selectedsquadchecked.ToList());
+            return View();
         }
 
         //
@@ -27,12 +26,8 @@ namespace ETA.FantasyFootbalBHPL.Controllers
 
         public ActionResult Details(int id = 0)
         {
-            selectedsquadchecked selectedsquadchecked = db.selectedsquadchecked.Find(id);
-            if (selectedsquadchecked == null)
-            {
-                return HttpNotFound();
-            }
-            return View(selectedsquadchecked);
+            
+            return View();
         }
 
         //
@@ -40,8 +35,7 @@ namespace ETA.FantasyFootbalBHPL.Controllers
 
         public ActionResult Create()
         {
-            ViewBag.idGameWeek1 = new SelectList(db.gameweek, "idGameWeek", "gameweekName");
-            ViewBag.Squad_idPlayersTeam = new SelectList(db.squad, "idPlayersTeam", "playersTeamName");
+            
             return View();
         }
 
@@ -51,15 +45,7 @@ namespace ETA.FantasyFootbalBHPL.Controllers
         [HttpPost]
         public ActionResult Create(selectedsquadchecked selectedsquadchecked)
         {
-            if (ModelState.IsValid)
-            {
-                db.selectedsquadchecked.Add(selectedsquadchecked);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            ViewBag.idGameWeek1 = new SelectList(db.gameweek, "idGameWeek", "gameweekName", selectedsquadchecked.idGameWeek1);
-            ViewBag.Squad_idPlayersTeam = new SelectList(db.squad, "idPlayersTeam", "playersTeamName", selectedsquadchecked.Squad_idPlayersTeam);
+            
             return View(selectedsquadchecked);
         }
 
@@ -68,14 +54,9 @@ namespace ETA.FantasyFootbalBHPL.Controllers
 
         public ActionResult Edit(int id = 0)
         {
-            selectedsquadchecked selectedsquadchecked = db.selectedsquadchecked.Find(id);
-            if (selectedsquadchecked == null)
-            {
-                return HttpNotFound();
-            }
-            ViewBag.idGameWeek1 = new SelectList(db.gameweek, "idGameWeek", "gameweekName", selectedsquadchecked.idGameWeek1);
-            ViewBag.Squad_idPlayersTeam = new SelectList(db.squad, "idPlayersTeam", "playersTeamName", selectedsquadchecked.Squad_idPlayersTeam);
-            return View(selectedsquadchecked);
+           
+            
+            return View();
         }
 
         //
@@ -84,14 +65,7 @@ namespace ETA.FantasyFootbalBHPL.Controllers
         [HttpPost]
         public ActionResult Edit(selectedsquadchecked selectedsquadchecked)
         {
-            if (ModelState.IsValid)
-            {
-                db.Entry(selectedsquadchecked).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            ViewBag.idGameWeek1 = new SelectList(db.gameweek, "idGameWeek", "gameweekName", selectedsquadchecked.idGameWeek1);
-            ViewBag.Squad_idPlayersTeam = new SelectList(db.squad, "idPlayersTeam", "playersTeamName", selectedsquadchecked.Squad_idPlayersTeam);
+            
             return View(selectedsquadchecked);
         }
 
@@ -100,12 +74,8 @@ namespace ETA.FantasyFootbalBHPL.Controllers
 
         public ActionResult Delete(int id = 0)
         {
-            selectedsquadchecked selectedsquadchecked = db.selectedsquadchecked.Find(id);
-            if (selectedsquadchecked == null)
-            {
-                return HttpNotFound();
-            }
-            return View(selectedsquadchecked);
+           
+            return View();
         }
 
         //
@@ -114,16 +84,13 @@ namespace ETA.FantasyFootbalBHPL.Controllers
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
-            selectedsquadchecked selectedsquadchecked = db.selectedsquadchecked.Find(id);
-            db.selectedsquadchecked.Remove(selectedsquadchecked);
-            db.SaveChanges();
+            
             return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)
         {
-            db.Dispose();
-            base.Dispose(disposing);
+            
         }
     }
 }

@@ -11,7 +11,6 @@ namespace ETA.FantasyFootbalBHPL.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
     
     public partial class user
     {
@@ -21,70 +20,24 @@ namespace ETA.FantasyFootbalBHPL.Models
             this.leagueparticipants = new HashSet<leagueparticipants>();
         }
     
-        [Key]
         public int userId { get; set; }
-
-        //[Required(ErrorMessage = "Polje je potrebno popuniti!")]
-        //[StringLength(45, ErrorMessage = "Polje {0} može imati najviše {1} karaktera.", MinimumLength = 0)]
-        //[Display(Name = "Ime")]
         public string firstName { get; set; }
-
-        //[Required(ErrorMessage = "Polje je potrebno popuniti!")]
-        //[StringLength(45, ErrorMessage = "Polje {0} može imati najviše {1} karaktera.", MinimumLength = 0)]
-        //[Display(Name = "Prezime")]
         public string lastName { get; set; }
-
-        //[Required(ErrorMessage = "Polje je potrebno popuniti!")]
-        //[DataType(DataType.DateTime)]
-        //[Display(Name = "Datum roðenja")]
         public System.DateTime dateOfBirth { get; set; }
-
         public bool gender { get; set; }
-
-        //[Phone]
-        //[Required(ErrorMessage = "Polje je potrebno popuniti!")]
-        //[Display(Name = "Broj telefona")]
         public string cellPhone { get; set; }
-
-        //[Required(ErrorMessage = "Polje je potrebno popuniti!")]
-        //[Display(Name = "E-mail adresa")]
-        //[EmailAddress]
         public string email { get; set; }
-
-        //[Required(ErrorMessage="Polje je potrebno popuniti!")]
-        //[StringLength(100, ErrorMessage = "Polje {0} mora imati najmanje {2} karaktera.", MinimumLength = 6)]
-        //[DataType(DataType.Password)]
-        //[Display(Name = "Šifra")]
         public string password { get; set; }
-
-        //[Required(ErrorMessage = "Polje je potrebno popuniti!")]
-        //[Display(Name = "Država")]
         public string country { get; set; }
-
-        //[Required(ErrorMessage = "Polje je potrebno popuniti!")]
-        //[Display(Name = "Regija/Kanton")]
         public string region { get; set; }
-
-        //[Required(ErrorMessage = "Polje je potrebno popuniti!")]
-        //[Display(Name = "Najbliži grad")]
         public string closestCity { get; set; }
-
-        //[Required(ErrorMessage = "Polje je potrebno popuniti!")]
-        //[Display(Name = "Vremenska zona")]
         public string timeZone { get; set; }
-
-        //[Required(ErrorMessage = "Polje je potrebno popuniti!")]
-        //[Display(Name = "Zip kod")]
         public string zipCode { get; set; }
-
-        //[Required(ErrorMessage = "Polje je potrebno popuniti!")]
-        //[Display(Name = "E-mail adresa")]
         public int idPlayersTeam1 { get; set; }
         public int UserGroup_idUserGroup { get; set; }
+        public byte[] image { get; set; }
     
         public virtual ICollection<league> league { get; set; }
         public virtual ICollection<leagueparticipants> leagueparticipants { get; set; }
-        public virtual squad squad { get; set; }
-        public virtual usergroup usergroup { get; set; }
     }
 }

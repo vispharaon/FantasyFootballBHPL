@@ -11,15 +11,15 @@ namespace ETA.FantasyFootbalBHPL.Controllers
 {
     public class SeasonController : Controller
     {
-        private fantasyEntities db = new fantasyEntities();
+        private fantasyEntities1 db = new fantasyEntities1();
 
         //
         // GET: /Season/
 
         public ActionResult Index()
         {
-            var season = db.season.Include(s => s.squadstructure);
-            return View(season.ToList());
+           
+            return View();
         }
 
         //

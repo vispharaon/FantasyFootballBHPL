@@ -4,45 +4,36 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="923e9e28c4cb441bb883981dc563ebe6" Name="Diagram1">
-        <EntityTypeShape EntityType="fantasyModel.events" Width="1.5" PointX="6" PointY="13.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="fantasyModel.footballplayer" Width="1.5" PointX="3" PointY="6.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="fantasyModel.footballteam" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="fantasyModel.gameweek" Width="1.5" PointX="3.75" PointY="14.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="fantasyModel.league" Width="1.5" PointX="10.5" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="fantasyModel.leagueparticipants" Width="1.5" PointX="12.75" PointY="4.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="fantasyModel.match" Width="1.5" PointX="6" PointY="7.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="fantasyModel.matchevents" Width="1.5" PointX="8.25" PointY="7.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="fantasyModel.playernews" Width="1.5" PointX="5.25" PointY="11" IsExpanded="true" />
-        <EntityTypeShape EntityType="fantasyModel.position" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="fantasyModel.season" Width="1.5" PointX="1.5" PointY="14.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="fantasyModel.selectedsquadchecked" Width="1.5" PointX="8" PointY="11" IsExpanded="true" />
-        <EntityTypeShape EntityType="fantasyModel.squad" Width="1.5" PointX="3" PointY="3.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="fantasyModel.squadplayer" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="fantasyModel.squadstructure" Width="1.5" PointX="1.5" PointY="18.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="fantasyModel.user" Width="1.5" PointX="8.25" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="fantasyModel.usergroup" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="2155ac53630742dd8d368703eadd5622" Name="Diagram1">
+        <EntityTypeShape EntityType="fantasyModel.events" Width="1.5" PointX="6" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="fantasyModel.footballplayer" Width="1.5" PointX="3" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="fantasyModel.footballteam" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="fantasyModel.gameweek" Width="1.5" PointX="3.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="fantasyModel.league" Width="1.5" PointX="8" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="fantasyModel.leagueparticipants" Width="1.5" PointX="10.25" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="fantasyModel.match" Width="1.5" PointX="6" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="fantasyModel.matchevents" Width="1.5" PointX="8.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="fantasyModel.playernews" Width="1.5" PointX="10.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="fantasyModel.position" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="fantasyModel.season" Width="1.5" PointX="1.5" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="fantasyModel.selectedsquadchecked" Width="1.5" PointX="0.75" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="fantasyModel.squad" Width="1.5" PointX="2.75" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="fantasyModel.squadplayer" Width="1.5" PointX="10.75" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="fantasyModel.squadstructure" Width="1.5" PointX="7.75" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="fantasyModel.user" Width="1.5" PointX="5.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="fantasyModel.usergroup" Width="1.5" PointX="9.75" PointY="12.25" IsExpanded="true" />
         <AssociationConnector Association="fantasyModel.fk_MatchEvents_Events1" ManuallyRouted="false" />
         <AssociationConnector Association="fantasyModel.fk_FootballPlayer_FootballTeam1" ManuallyRouted="false" />
         <AssociationConnector Association="fantasyModel.fk_FootballPlayer_Position1" ManuallyRouted="false" />
         <AssociationConnector Association="fantasyModel.fk_MatchEvents_FootballPlayer1" ManuallyRouted="false" />
-        <AssociationConnector Association="fantasyModel.fk_PlayerNews_FootballPlayer1" ManuallyRouted="false" />
-        <AssociationConnector Association="fantasyModel.idFootballPlayerFK" ManuallyRouted="false" />
         <AssociationConnector Association="fantasyModel.fk_Match_FootballTeam1" ManuallyRouted="false" />
         <AssociationConnector Association="fantasyModel.fk_Match_FootballTeam2" ManuallyRouted="false" />
         <AssociationConnector Association="fantasyModel.fk_GameWeek_Season1" ManuallyRouted="false" />
         <AssociationConnector Association="fantasyModel.fk_League_GameWeek1" ManuallyRouted="false" />
         <AssociationConnector Association="fantasyModel.fk_Match_GameWeek1" ManuallyRouted="false" />
-        <AssociationConnector Association="fantasyModel.fk_SelectedSquadChecked_GameWeek1" ManuallyRouted="false" />
         <AssociationConnector Association="fantasyModel.fk_League_Player1" ManuallyRouted="false" />
         <AssociationConnector Association="fantasyModel.fk_LeagueParticipants_League1" ManuallyRouted="false" />
         <AssociationConnector Association="fantasyModel.fk_LeagueParticipants_Player1" ManuallyRouted="false" />
-        <AssociationConnector Association="fantasyModel.fk_MatchEvents_Match1" ManuallyRouted="false" />
-        <AssociationConnector Association="fantasyModel.fk_Season_SquadStructure1" ManuallyRouted="false" />
-        <AssociationConnector Association="fantasyModel.fk_SelectedSquadChecked_Squad1" ManuallyRouted="false" />
-        <AssociationConnector Association="fantasyModel.fk_Player_PlayersTeam" ManuallyRouted="false" />
-        <AssociationConnector Association="fantasyModel.idPlayersTeamFK" ManuallyRouted="false" />
-        <AssociationConnector Association="fantasyModel.fk_User_UserGroup1" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

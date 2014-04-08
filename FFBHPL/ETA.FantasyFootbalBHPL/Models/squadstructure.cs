@@ -14,11 +14,6 @@ namespace ETA.FantasyFootbalBHPL.Models
     
     public partial class squadstructure
     {
-        public squadstructure()
-        {
-            this.season = new HashSet<season>();
-        }
-    
         public int idSquadStructure { get; set; }
         public int GK_min { get; set; }
         public int GK_max { get; set; }
@@ -28,7 +23,5 @@ namespace ETA.FantasyFootbalBHPL.Models
         public int DEF_max { get; set; }
         public int FW_min { get; set; }
         public int FW_max { get; set; }
-    
-        public virtual ICollection<season> season { get; set; }
     }
 }

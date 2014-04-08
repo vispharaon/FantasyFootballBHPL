@@ -11,7 +11,7 @@ namespace ETA.FantasyFootbalBHPL.Controllers
 {
     public class UserGroupController : Controller
     {
-        private fantasyEntities db = new fantasyEntities();
+        private fantasyEntities1 db = new fantasyEntities1();
 
         //
         // GET: /UserGroup/

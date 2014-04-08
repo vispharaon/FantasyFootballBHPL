@@ -18,8 +18,5 @@ namespace ETA.FantasyFootbalBHPL.Models
         public int PlayersTeamFK { get; set; }
         public int FootballPlayerFK { get; set; }
         public int priority { get; set; }
-    
-        public virtual footballplayer footballplayer { get; set; }
-        public virtual squad squad { get; set; }
     }
 }

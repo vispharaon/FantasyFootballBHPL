@@ -14,22 +14,11 @@ namespace ETA.FantasyFootbalBHPL.Models
     
     public partial class squad
     {
-        public squad()
-        {
-            this.selectedsquadchecked = new HashSet<selectedsquadchecked>();
-            this.user = new HashSet<user>();
-            this.squadplayer = new HashSet<squadplayer>();
-        }
-    
         public int idPlayersTeam { get; set; }
         public string playersTeamName { get; set; }
         public int GK_owned { get; set; }
         public int MF_owned { get; set; }
         public int DEF_owned { get; set; }
         public int FW_owned { get; set; }
-    
-        public virtual ICollection<selectedsquadchecked> selectedsquadchecked { get; set; }
-        public virtual ICollection<user> user { get; set; }
-        public virtual ICollection<squadplayer> squadplayer { get; set; }
     }
 }

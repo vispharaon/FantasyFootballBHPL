@@ -13,10 +13,10 @@ namespace ETA.FantasyFootbalBHPL.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class fantasyEntities : DbContext
+    public partial class fantasyEntities1 : DbContext
     {
-        public fantasyEntities()
-            : base("name=fantasyEntities")
+        public fantasyEntities1()
+            : base("name=fantasyEntities1")
         {
         }
     

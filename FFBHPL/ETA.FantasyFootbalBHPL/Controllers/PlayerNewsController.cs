@@ -11,15 +11,15 @@ namespace ETA.FantasyFootbalBHPL.Controllers
 {
     public class PlayerNewsController : Controller
     {
-        private fantasyEntities db = new fantasyEntities();
+        private fantasyEntities1 db = new fantasyEntities1();
 
         //
         // GET: /PlayerNews/
 
         public ActionResult Index()
         {
-            var playernews = db.playernews.Include(p => p.footballplayer);
-            return View(playernews.ToList());
+
+            return View();
         }
 
         //

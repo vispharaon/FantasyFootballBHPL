@@ -11,14 +11,14 @@ namespace ETA.FantasyFootbalBHPL.Controllers
 {
     public class SquadStructureController : Controller
     {
-        private fantasyEntities db = new fantasyEntities();
+       
 
         //
         // GET: /SquadStructure/
 
         public ActionResult Index()
         {
-            return View(db.squadstructure.ToList());
+            return View();
         }
 
         //
@@ -26,12 +26,7 @@ namespace ETA.FantasyFootbalBHPL.Controllers
 
         public ActionResult Details(int id = 0)
         {
-            squadstructure squadstructure = db.squadstructure.Find(id);
-            if (squadstructure == null)
-            {
-                return HttpNotFound();
-            }
-            return View(squadstructure);
+            return View();
         }
 
         //
@@ -50,9 +45,7 @@ namespace ETA.FantasyFootbalBHPL.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.squadstructure.Add(squadstructure);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                return View();
             }
 
             return View(squadstructure);
@@ -63,12 +56,7 @@ namespace ETA.FantasyFootbalBHPL.Controllers
 
         public ActionResult Edit(int id = 0)
         {
-            squadstructure squadstructure = db.squadstructure.Find(id);
-            if (squadstructure == null)
-            {
-                return HttpNotFound();
-            }
-            return View(squadstructure);
+            return View();
         }
 
         //
@@ -79,9 +67,7 @@ namespace ETA.FantasyFootbalBHPL.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(squadstructure).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                return View();
             }
             return View(squadstructure);
         }
@@ -91,12 +77,7 @@ namespace ETA.FantasyFootbalBHPL.Controllers
 
         public ActionResult Delete(int id = 0)
         {
-            squadstructure squadstructure = db.squadstructure.Find(id);
-            if (squadstructure == null)
-            {
-                return HttpNotFound();
-            }
-            return View(squadstructure);
+            return View();
         }
 
         //
@@ -105,16 +86,11 @@ namespace ETA.FantasyFootbalBHPL.Controllers
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
-            squadstructure squadstructure = db.squadstructure.Find(id);
-            db.squadstructure.Remove(squadstructure);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            return View();
         }
-
         protected override void Dispose(bool disposing)
         {
-            db.Dispose();
-            base.Dispose(disposing);
+            
         }
     }
 }

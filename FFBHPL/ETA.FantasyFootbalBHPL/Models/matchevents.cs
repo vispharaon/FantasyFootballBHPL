@@ -11,11 +11,9 @@ namespace ETA.FantasyFootbalBHPL.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
     
     public partial class matchevents
     {
-        [Key]
         public int idMatchEvents { get; set; }
         public int idMatch1 { get; set; }
         public int idFootballPlayer1 { get; set; }
@@ -24,6 +22,5 @@ namespace ETA.FantasyFootbalBHPL.Models
     
         public virtual events events { get; set; }
         public virtual footballplayer footballplayer { get; set; }
-        public virtual match match { get; set; }
     }
 }

@@ -11,11 +11,9 @@ namespace ETA.FantasyFootbalBHPL.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
     
     public partial class leagueparticipants
     {
-        [Key]
         public int idLeagueParticipants { get; set; }
         public int participant { get; set; }
         public string status { get; set; }

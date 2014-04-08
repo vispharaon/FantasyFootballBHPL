@@ -11,16 +11,9 @@ namespace ETA.FantasyFootbalBHPL.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
     
     public partial class match
     {
-        public match()
-        {
-            this.matchevents = new HashSet<matchevents>();
-        }
-    
-        [Key]
         public int idMatch { get; set; }
         public int idGameWeek2 { get; set; }
         public int homeTeam { get; set; }
@@ -29,6 +22,5 @@ namespace ETA.FantasyFootbalBHPL.Models
         public virtual footballteam footballteam { get; set; }
         public virtual footballteam footballteam1 { get; set; }
         public virtual gameweek gameweek { get; set; }
-        public virtual ICollection<matchevents> matchevents { get; set; }
     }
 }
